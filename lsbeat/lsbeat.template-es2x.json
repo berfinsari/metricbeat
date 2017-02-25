@@ -47,6 +47,19 @@
         "counter": {
           "type": "long"
         },
+        "directory": {
+          "type": "boolean"
+        },
+        "filename": {
+          "index": "analyzed",
+          "norms": {
+            "enabled": false
+          },
+          "type": "string"
+        },
+        "filesize": {
+          "type": "long"
+        },
         "meta": {
           "properties": {
             "cloud": {
@@ -84,6 +97,14 @@
               }
             }
           }
+        },
+        "modtime": {
+          "type": "date"
+        },
+        "path": {
+          "ignore_above": 1024,
+          "index": "not_analyzed",
+          "type": "string"
         },
         "tags": {
           "ignore_above": 1024,

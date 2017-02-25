@@ -7,3 +7,13 @@
       required: true
       description: >
         PLEASE UPDATE DOCUMENTATION
+  #new fiels added lsbeat
+    - name: modtime
+      type: date
+    - name: filename
+      type: text
+    - name: path
+    - name: directory
+      type: boolean
+    - name: filesize
+      type: long
