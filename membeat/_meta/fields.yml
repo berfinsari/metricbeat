@@ -1,0 +1,13 @@
+- key: membeat
+  title: membeat
+  description:
+  fields:
+    - name: counter
+      type: long
+      required: true
+      description: >
+        PLEASE UPDATE DOCUMENTATION
+    - name: active_slabs
+      type: integer
+    - name: total_malloced
+      type: integer
