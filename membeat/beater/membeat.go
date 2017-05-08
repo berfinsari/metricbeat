@@ -12,7 +12,7 @@ import (
 	"github.com/elastic/beats/libbeat/logp"
 	"github.com/elastic/beats/libbeat/publisher"
 
-	"github.com/berfinsari/membeat/config"
+	"github.com/berfinsari/metricbeat/membeat/config"
 )
 
 type Membeat struct {
@@ -36,19 +36,34 @@ func New(b *beat.Beat, cfg *common.Config) (beat.Beater, error) {
 }
 
 func (bt *Membeat) Run(b *beat.Beat) error {
+	//var stats = "stats slabs"
 	logp.Info("membeat is running! Hit CTRL-C to stop it.")
-	bt.CollectStats("stats slabs",b.Name)
+        bt.client = b.Publisher.Connect()
+        ticker := time.NewTicker(bt.config.Period)
+ 	counter := 1
+
+        for {
+                select {
+                case <-bt.done:
+                        return nil
+                case <-ticker.C:
+                }
+		bt.collectStats(b.Name)
+		logp.Info("Event sent")
+		counter ++
+	}
+
 }
+func (bt *Membeat) collectStats(beatname string) {
 
-
-func (*bt Membeat) CollectStats(statsCommand string, beatname string ){
-        command := statsCommand
+	command := "stats slabs"
         hostName := "localhost"
         portNum := "11211"
-        var message, atama
+	var atama [5]string
+	var message string
 
-        conn, err := net.Dial("tcp",hostName+":"+portNum)
-        if err != nil{
+	conn, err := net.Dial("tcp",hostName+":"+portNum)
+	if err != nil{
                 fmt.Println("Error %v",err)
                 return
         } else{
@@ -57,36 +72,22 @@ func (*bt Membeat) CollectStats(statsCommand string, beatname string ){
                 message,_ = bufio.NewReader(conn).ReadString('E')
         }
 
-        message = strings.SplitAfter(message, "\n")
+        veri := strings.SplitAfter(message, "\n")
         for i:=0;i<len(veri)-1;i++ {
-                gecici := strings.Fields(message[i])
-                atama[i] =gecici[2]
+                gecici := strings.Fields(veri[i])
+                atama[i] = gecici[2]
         }
 
-        bt.client = b.Publisher.Connect()
-        ticker := time.NewTicker(bt.config.Period)
+        activeslabs := atama[0]
+	totalmalloced := atama[1]
 
-        for {
-                select {
-                case <-bt.done:
-                        return nil
-                case <-ticker.C:
-                }
-
-
-	        activeslabs := atama[0]
-		totalmalloced := atama[1]
-
-	        event := common.MapStr{
-		        "@timestamp":           common.Time(time.Now()),
-		        "type":                 beatname,
-			"active_slabs":         activeslabs,
-			"total_malloced":       totalmalloced,
-		}
-		bt.client.PublishEvent(event)
-		logp.Info("Event sent")
-        }
-
+        event := common.MapStr{
+	        "@timestamp":           common.Time(time.Now()),
+	        "type":                 beatname,
+		"active_slabs":         activeslabs,
+		"total_malloced":       totalmalloced,
+	}
+	bt.client.PublishEvent(event)
 }
 
 func (bt *Membeat) Stop() {
