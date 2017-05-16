@@ -11,9 +11,10 @@ func main(){
     hostName := "localhost"
     portNum := "11211"
 
-    dial(command, hostName, portNum)
+    doDial(command, hostName, portNum)
+    //fmt.Println(deneme)
 }
-func dial(cmd, host, port string) {
+func doDial(cmd, host, port string) {
     conn, err := net.Dial("tcp", host+":"+port)
     if err != nil {
         fmt.Printf("Error %v", err)

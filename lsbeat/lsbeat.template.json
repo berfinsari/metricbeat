@@ -99,24 +99,7 @@
   },
   "order": 0,
   "settings": {
-    "index.refresh_interval": "5s",
-    "analysis": {
-      "analyzer": {
-        "ls_ngram_analyzer": {
-          "tokenizer": "ls_ngram_tokenizer"
-        }
-      },
-      "tokenizer": {
-        "ls_ngram_tokenizer": {
-          "type": "ngram",
-          "min_gram": "2",
-          "token_chars": [
-            "letter",
-            "digit"
-          ]
-        }
-      }
-    }
+    "index.refresh_interval": "5s"
   },
   "template": "lsbeat-*"
 }

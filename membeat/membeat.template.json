@@ -1,4 +1,4 @@
-{
+
   "mappings": {
     "_default_": {
       "_all": {
@@ -80,9 +80,165 @@
           "ignore_above": 1024,
           "type": "keyword"
         },
-        "total_malloced": {
+        "pid": {
           "type": "long"
-        }
+	},
+        "uptime": {
+	  "type": "long"
+	},
+	"time": {
+	  "type": "long"
+	},
+	"version": {
+	  "type": "string"
+	},
+	"libevent": {
+	  "type": "string"
+	},
+	"pointer_size": {
+	  "type": "integer"
+	},
+	"rusage_user": {
+	  "type": "float"
+	},
+	"rusage_system": {
+	  "type": "float"
+	},
+	"curr_connections": {
+	  "type": "integer"
+	},
+	"total_connections": {
+	  "type": "integer"
+	},
+	"connection_structures": {
+	  "type": "integer"
+	},
+	"reserved_fds": {
+	  "type": "integer"
+	},
+	"cmd_get": {
+	  "type": "integer"
+	},
+	"cmd_set": {
+	  "type": "integer"
+	},
+	"cmd_flush": {
+	  "type": "integer"
+	},
+	"cmd_touch": {
+	  "type": "integer"
+	},
+	"get_hits": {
+	  "type": "integer"
+	},
+	"get_misses": {
+	  "type": "integer"
+	},
+	"delete_misses": {
+	  "type": "integer"
+	},
+	"delete_hits": {
+	  "type": "integer"
+	},
+	"incr_misses": {
+	  "type": "integer"
+	},
+	"incr_hits": {
+	  "type": "integer"
+	},
+	"decr_misses": {
+	  "type": "integer"
+	},
+	"decr_hits": {
+	  "type": "integer"
+	},
+	"cas_misses": {
+	  "type": "integer"
+	},
+	"cas_hits": {
+	  "type": "integer"
+	},
+	"cad_badval": {
+	  "type": "integer"
+	},
+	"touch_hits": {
+	  "type": "integer"
+	},
+	"touch_misses": {
+	  "type": "integer"
+	},
+	"auth_cmds": {
+	  "type": "integer"
+	},
+	"auth_errors": {
+	  "type": "integer"
+	},
+	"bytes_read": {
+	  "type": "integer"
+	},
+	"bytes_written": {
+	  "type": "integer"
+	},
+	"limit_maxbytes": {
+	  "type": "long"
+	},
+	"accepting_conns": {
+	  "type": "integer"
+	},
+	"listen_disable_num": {
+	  "type": "integer"
+	},
+	"time_in_listen_disable_us": {
+	  "type": "integer"
+	},
+	"threads": {
+	  "type": "integer"
+	},
+	"conn_yields": {
+	  "type": "integer"
+	},
+	"hash_power_level": {
+	  "type": "integer"
+	},
+	"hash_bytes": {
+	  "type": "long"
+	},
+	"hash_is_expanding": {
+	  "type": "integer"
+	},
+	"malloc_fails": {
+	  "type": "integer"
+	},
+	"bytes": {
+	  "type": "integer"
+	},
+	"curr_items": {
+	  "type": "integer"
+	},
+	"total_items": {
+	  "type": "integer"
+	},
+	"expired_unfetched": {
+	  "type": "integer"
+	},
+	"evicted_unfetched": {
+	  "type": "integer"
+	},
+	"evictions": {
+	  "type": "integer"
+	},
+	"reclaimed": {
+	  "type": "integer"
+	},
+	"crawler_reclaimed": {
+	  "type": "integer"
+	},
+	"crawler_items_checked": {
+	  "type": "integer"
+	},
+	"lrutail_reflocked": {
+	  "type": "integer"
+	}
       }
     }
   },

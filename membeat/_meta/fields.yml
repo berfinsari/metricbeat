@@ -7,7 +7,115 @@
       required: true
       description: >
         PLEASE UPDATE DOCUMENTATION
-    - name: active_slabs
+    - name: "@timestamp"
+      type: date
+      required: true
+      format: YYYY-MM-DDTHH:MM:SS.milliZ
+      example: 2015-01-24T14:06:05.071Z
+    - name: pid
+      type: long
+    - name: uptime
+      type: long
+    - name: time
+      type: long
+    - name: version
+      type: string
+    - name: libevent
+      type: string
+    - name: pointer_size
       type: integer
-    - name: total_malloced
+    - name: rusage_user
+      type: float
+    - name: rusage_system
+      type: float
+    - name: curr_connections
       type: integer
+    - name: total_connections
+      type: integer
+    - name: connection_structures
+      type: integer
+    - name: reserved_fds
+      type: integer
+    - name: cmd_get
+      type: integer
+    - name: cmd_set
+      type: integer
+    - name: cmd_flush
+      type: integer
+    - name: cmd_touch
+      type: integer
+    - name: get_hits
+      type: integer
+    - name: get_misses
+      type: integer
+    - name: delete_misses
+      type: integer
+    - name: delete_hits
+      type: integer
+    - name: incr_misses
+      type: integer
+    - name: incr_hits
+      type: integer
+    - name: decr_misses
+      type: integer
+    - name: decr_hits
+      type: integer
+    - name: cas_misses
+      type: integer
+    - name: cas_hits
+      type: integer
+    - name: cad_badval
+      type: integer
+    - name: touch_hits
+      type: integer
+    - name: touch_misses
+      type: integer
+    - name: auth_cmds
+      type: integer
+    - name: auth_errors
+      type: integer
+    - name: bytes_read
+      type: integer
+    - name: bytes_written
+      type: integer
+    - name: limit_maxbytes
+      type: long
+    - name: accepting_conns
+      type: integer
+    - name: listen_disable_num
+      type: integer
+    - name: time_in_listen_disable_us
+      type: integer
+    - name: threads
+      type: integer
+    - name: conn_yields
+      type: integer
+    - name: hash_power_level
+      type: integer
+    - name: hash_bytes
+      type: long
+    - name: hash_is_expanding
+      type: integer
+    - name: malloc_fails
+      type: integer
+    - name: bytes
+      type: integer
+    - name: curr_items
+      type: integer
+    - name: total_items
+      type: integer
+    - name: expired_unfetched
+      type: integer
+    - name: evicted_unfetched
+      type: integer
+    - name: evictions
+      type: integer
+    - name: reclaimed
+      type: integer
+    - name: crawler_reclaimed
+      type: integer
+    - name: crawler_items_checked
+      type: integer
+    - name: lrutail_reflocked
+      type: integer
+

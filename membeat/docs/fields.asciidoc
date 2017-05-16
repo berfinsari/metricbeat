@@ -138,12 +138,267 @@ PLEASE UPDATE DOCUMENTATION
 
 
 [float]
-=== active_slabs
+=== pid
+
+type: long
+
+[float]
+=== uptime
+
+type: long
+
+[float]
+=== time
+
+type: long
+
+[float]
+=== version
+
+type: string
+
+[float]
+=== libevent
+
+type: string
+
+[float]
+=== pointer_size
 
 type: integer
 
 [float]
-=== total_malloced
+=== rusage_user
+
+type: float
+
+[float]
+=== rusage_system
+
+type: float
+
+[float]
+=== curr_connections
+
+type: integer
+
+[float]
+=== total_connections
+
+type: integer
+
+[float]
+=== connection_structures
+
+type: integer
+
+[float]
+=== reserved_fds
+
+type: integer
+
+[float]
+=== cmd_get
+
+type: integer
+
+[float]
+=== cmd_set
+
+type: integer
+
+[float]
+=== cmd_flush
+
+type: integer
+
+[float]
+=== cmd_touch
+
+type: integer
+
+[float]
+=== get_hits
+
+type: integer
+
+[float]
+=== get_misses
+
+type: integer
+
+[float]
+=== delete_misses
+
+type: integer
+
+[float]
+=== delete_hits
+
+type: integer
+
+[float]
+=== incr_misses
+
+type: integer
+
+[float]
+=== incr_hits
+
+type: integer
+
+[float]
+=== decr_misses
+
+type: integer
+
+[float]
+=== decr_hits
+
+type: integer
+
+[float]
+=== cas_misses
+
+type: integer
+
+[float]
+=== cas_hits
+
+type: integer
+
+[float]
+=== cad_badval
+
+type: integer
+
+[float]
+=== touch_hits
+
+type: integer
+
+[float]
+=== touch_misses
+
+type: integer
+
+[float]
+=== auth_cmds
+
+type: integer
+
+[float]
+=== auth_errorrs
+
+type: integer
+
+[float]
+=== bytes_read
+
+type: integer
+
+[float]
+=== bytes_written
+
+type: integer
+
+[float]
+=== limit_maxbytes
+
+type: long
+
+[float]
+=== accepting_conns
+
+type: integer
+
+[float]
+=== listen_disable_num
+
+type: integer
+
+[float]
+=== time_in_listen_disable_us
+
+type: integer
+
+[float]
+=== threads
+
+type: integer
+
+[float]
+=== conn_yields
+
+type: integer
+
+[float]
+=== hash_power_level
+
+type: integer
+
+[float]
+=== hash_bytes
+
+type: long
+
+[float]
+=== hash_is_expanding
+
+type: integer
+
+[float]
+=== malloc_fails
+
+type: integer
+
+[float]
+=== bytes
+
+type: integer
+
+[float]
+=== curr_items
+
+type: integer
+
+[float]
+=== total_items
+
+type: integer
+
+[float]
+=== expired_unfetched
+
+type: integer
+
+[float]
+=== evicted_unfetched
+
+type: integer
+
+[float]
+=== evictions
+
+type: integer
+
+[float]
+=== reclaimed
+
+type: integer
+
+[float]
+=== crawler_reclaimed
+
+type: integer
+
+[float]
+=== crawler_items_checked
+
+type: integer
+
+[float]
+=== lrutail_reflocked
 
 type: integer
 

@@ -1,5 +1,3 @@
-package beater
-
 import (
 	"fmt"
 	"time"
