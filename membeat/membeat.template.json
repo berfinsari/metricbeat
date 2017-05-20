@@ -22,64 +22,6 @@
         "@timestamp": {
           "type": "date"
         },
-        "active_slabs": {
-          "type": "long"
-        },
-        "beat": {
-          "properties": {
-            "hostname": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "name": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            },
-            "version": {
-              "ignore_above": 1024,
-              "type": "keyword"
-            }
-          }
-        },
-        "counter": {
-          "type": "long"
-        },
-        "meta": {
-          "properties": {
-            "cloud": {
-              "properties": {
-                "availability_zone": {
-                  "ignore_above": 1024,
-                  "type": "keyword"
-                },
-                "instance_id": {
-                  "ignore_above": 1024,
-                  "type": "keyword"
-                },
-                "machine_type": {
-                  "ignore_above": 1024,
-                  "type": "keyword"
-                },
-                "project_id": {
-                  "ignore_above": 1024,
-                  "type": "keyword"
-                },
-                "provider": {
-                  "ignore_above": 1024,
-                  "type": "keyword"
-                },
-                "region": {
-                  "ignore_above": 1024,
-                  "type": "keyword"
-                }
-              }
-            }
-          }
-        },
-        "tags": {
-          "ignore_above": 1024,
-          "type": "keyword"
-        },
         "pid": {
           "type": "long"
 	},
@@ -238,7 +180,62 @@
 	},
 	"lrutail_reflocked": {
 	  "type": "integer"
-	}
+        },
+        "beat": {
+          "properties": {
+            "hostname": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "name": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            },
+            "version": {
+              "ignore_above": 1024,
+              "type": "keyword"
+            }
+          }
+        },
+        "counter": {
+          "type": "long"
+        },
+        "meta": {
+          "properties": {
+            "cloud": {
+              "properties": {
+                "availability_zone": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "instance_id": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "machine_type": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "project_id": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "provider": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                },
+                "region": {
+                  "ignore_above": 1024,
+                  "type": "keyword"
+                }
+              }
+            }
+          }
+        },
+        "tags": {
+          "ignore_above": 1024,
+          "type": "keyword"
+        }
       }
     }
   },
