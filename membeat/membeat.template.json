@@ -1,5 +1,5 @@
-
-  "mappings": {
+{ 
+ "mappings": {
     "_default_": {
       "_all": {
         "norms": false
@@ -248,3 +248,4 @@
   },
   "template": "membeat-*"
 }
+
