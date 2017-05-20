@@ -77,6 +77,7 @@ func (bt *Membeat) collectStats(beatname string) {
                 gecici := strings.Fields(veri[i])
                 value[i] = gecici[2]
 	 }
+	now := time.Now()
 
 	pid :=	value[0]
 	uptime := value[1]
@@ -132,7 +133,7 @@ func (bt *Membeat) collectStats(beatname string) {
         lrutail_reflocked := value[51]
 
         event := common.MapStr{
-		"@timestamp":			common.Time(time.Now()),
+		"@timestamp":			common.Time(now),
 	        "type":				beatname,
 		"pid":				pid,
 		"uptime":			uptime,
