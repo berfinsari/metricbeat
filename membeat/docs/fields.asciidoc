@@ -138,6 +138,17 @@ PLEASE UPDATE DOCUMENTATION
 
 
 [float]
+=== @timestamp
+
+type: date
+
+example: 2015-01-24 14:06:05.071000
+
+format: YYYY-MM-DDTHH:MM:SS.milliZ
+
+required: True
+
+[float]
 === pid
 
 type: long
@@ -288,7 +299,7 @@ type: integer
 type: integer
 
 [float]
-=== auth_errorrs
+=== auth_errors
 
 type: integer
 
