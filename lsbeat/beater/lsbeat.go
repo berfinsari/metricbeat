@@ -18,7 +18,7 @@ type Lsbeat struct {
 	lastIndexTime time.Time
 }
 
-// Creates beater
+
 func New(b *beat.Beat, cfg *common.Config) (beat.Beater, error) {
 	config := config.DefaultConfig
 	if err := cfg.Unpack(&config); err != nil {
@@ -47,8 +47,8 @@ func (bt *Lsbeat) Run(b *beat.Beat) error {
         case <-ticker.C:
         }
 
-        bt.listDir(bt.config.Path, b.Name, true)   // call lsDir
-        bt.lastIndexTime = time.Now()               // mark Timestamp
+        bt.listDir(bt.config.Path, b.Name, true) 
+        bt.lastIndexTime = time.Now() 
 
         logp.Info("Event sent")
         counter++
@@ -65,7 +65,7 @@ func (bt *Lsbeat) listDir(dirFile string, beatname string, init bool) {
     files, _ := ioutil.ReadDir(dirFile)
     for _, f := range files {
         t := f.ModTime()
-        //fmt.Println(f.Name(), dirFile+"/"+f.Name(), f.IsDir(), t, f.Size())
+
 
         event := common.MapStr{
             "@timestamp": common.Time(time.Now()),
@@ -77,12 +77,10 @@ func (bt *Lsbeat) listDir(dirFile string, beatname string, init bool) {
             "filesize":   f.Size(),
         }
         if init {
-            // index all files and directories on init
-            bt.client.PublishEvent(event) //elasticsearch index.
+            bt.client.PublishEvent(event)
         } else {
-            // Index only changed files since last run.
             if t.After(bt.lastIndexTime) {
-                bt.client.PublishEvent(event) //elasticsearch index.
+                bt.client.PublishEvent(event)
             }
         }
 
