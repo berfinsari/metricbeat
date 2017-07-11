@@ -36,11 +36,11 @@ func New(b *beat.Beat, cfg *common.Config) (beat.Beater, error) {
 }
 
 func (bt *Membeat) Run(b *beat.Beat) error {
-	//var stats = "stats slabs"
+
 	logp.Info("membeat is running! Hit CTRL-C to stop it.")
         bt.client = b.Publisher.Connect()
         ticker := time.NewTicker(bt.config.Period)
- 	counter := 1
+	counter := 1
 
         for {
                 select {
